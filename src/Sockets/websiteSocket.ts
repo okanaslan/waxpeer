@@ -3,7 +3,7 @@ import io from "socket.io-client";
 import { WebsiteSocketSubEvents } from "../types/sockets";
 
 export class WebsiteWebsocket extends EventEmitter {
-    private apiKey: string;
+    private apiKey: string | undefined;
     public socketOpen = false;
     public subEvents: Array<keyof typeof WebsiteSocketSubEvents> = [];
     constructor(apiKey?: string, subEvents: Array<keyof typeof WebsiteSocketSubEvents> = []) {
@@ -13,6 +13,7 @@ export class WebsiteWebsocket extends EventEmitter {
         this.subEvents = subEvents;
     }
     async connectWss() {
+        if (!this.apiKey) return;
         const socket = io("wss://waxpeer.com", {
             transports: ["websocket"],
             path: "/socket.io/",

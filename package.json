@@ -1,38 +1,24 @@
 {
     "name": "waxpeer",
-    "version": "1.3.3",
+    "version": "2.0.0",
     "description": "Waxpeer API wrapper for NodeJs",
-    "main": "dist/index.js",
-    "types": "dist/index.d.ts",
+    "main": "src/index.ts",
     "scripts": {
         "dev": "tsc-watch --onSuccess \"node ./dist/test.js\"",
-        "build": "tsc",
+        "build": "tsc -p ./tsconfig.json",
         "push": "tsc && npm publish --access public"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/skylight-ity/waxpeer.git"
     },
-    "keywords": [
-        "waxpeer",
-        "steam",
-        "p2p"
-    ],
-    "author": {
-        "name": "Ihtiyor",
-        "email": "ity@waxpeer.com",
-        "url": "https://twitter.com/skylight_ity"
-    },
     "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/skylight-ity/waxpeer/issues"
-    },
-    "homepage": "https://github.com/skylight-ity/waxpeer#readme",
     "devDependencies": {
+        "@types/qs": "^6.9.11",
+        "@types/ws": "^8.5.10",
         "prettier": "^3.1.1",
         "ts-node": "^10.9.2",
-        "tsc-watch": "^6.0.4",
-        "typescript": "^5.3.3"
+        "tsc-watch": "^6.0.4"
     },
     "dependencies": {
         "@types/node": "^20.10.6",
@@ -42,6 +28,7 @@
         "qs": "^6.11.2",
         "socket.io-client": "^4.7.2",
         "tsc": "^2.0.4",
+        "typescript": "^5.3.3",
         "ws": "^8.16.0"
     }
 }

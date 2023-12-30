@@ -159,7 +159,7 @@ export class Waxpeer {
         price: number,
         token: string,
         partner: string,
-        project_id: string = undefined,
+        project_id: string | undefined = undefined,
         game: keyof typeof EGameId = "csgo",
     ): Promise<IBuy> {
         return this.get("buy-one-p2p-name", qs.stringify({ name: encodeURIComponent(name), price, token, partner, project_id, game }));
@@ -372,9 +372,9 @@ export class Waxpeer {
      */
     public getPrices(
         game: keyof typeof EGameId = "csgo",
-        min_price: number = undefined,
-        max_price: number = undefined,
-        search: string = undefined,
+        min_price: number | undefined = undefined,
+        max_price: number | undefined = undefined,
+        search: string | undefined = undefined,
         minified: 0 | 1 = 1,
         highest_offer: number = 0,
         single: 0 | 1 = 0,
@@ -426,12 +426,12 @@ export class Waxpeer {
      */
     public getPricesDopplers(
         phase: keyof typeof EDopplersPhases = "any",
-        exterior: keyof typeof EMinExteriors = undefined,
-        weapon: keyof typeof EWeapon = undefined,
+        exterior: keyof typeof EMinExteriors | undefined = undefined,
+        weapon: keyof typeof EWeapon | undefined = undefined,
         minified: 0 | 1 = 1,
-        min_price: number = undefined,
-        max_price: number = undefined,
-        search: string = undefined,
+        min_price: number | undefined = undefined,
+        max_price: number | undefined = undefined,
+        search: string | undefined = undefined,
         single: 0 | 1 = 0,
     ): Promise<IPricesDopplers> {
         if (!this.getPricesDopplersLimiter.tryRemoveTokens(1)) return Promise.reject(new Error("Too many requests, try again later"));
@@ -741,7 +741,7 @@ export class Waxpeer {
      *   ]
      * }
      */
-    public myPurchases(skip = 0, partner: string = undefined, token: string = undefined): Promise<IBuyMyHistory> {
+    public myPurchases(skip = 0, partner: string | undefined = undefined, token: string | undefined = undefined): Promise<IBuyMyHistory> {
         return this.get(`history`, qs.stringify({ skip, partner, token }));
     }
 
@@ -853,7 +853,7 @@ export class Waxpeer {
      *   "count": 0
      * }
      */
-    public removeAll(game: keyof typeof EGameId = undefined): Promise<IRemoveAll> {
+    public removeAll(game: keyof typeof EGameId | undefined = undefined): Promise<IRemoveAll> {
         return this.get(`remove-all`, qs.stringify({ game }));
     }
     /**
@@ -993,7 +993,7 @@ export class Waxpeer {
      *
      * @param game (optional) Game from supported games (without game param will remove all)
      */
-    public removeAllOrders(game: keyof typeof EGameId = undefined): Promise<IRemoveAllOrders> {
+    public removeAllOrders(game: keyof typeof EGameId | undefined = undefined): Promise<IRemoveAllOrders> {
         return this.get(`remove-all-orders`, qs.stringify({ game }));
     }
 
@@ -1034,13 +1034,13 @@ export class Waxpeer {
      */
     public getItemsList(
         skip: number = 0,
-        search: string = undefined,
-        brand: keyof typeof EWeaponBrand = undefined,
+        search: string | undefined = undefined,
+        brand: keyof typeof EWeaponBrand | undefined = undefined,
         order: "ASC" | "DESC" = "DESC",
         order_by: "price" | "name" | "discount" | "best_deals" = "price",
-        exterior: keyof typeof EMinExteriors = undefined,
-        max_price: number = undefined,
-        min_price: number = undefined,
+        exterior: keyof typeof EMinExteriors | undefined = undefined,
+        max_price: number | undefined = undefined,
+        min_price: number | undefined = undefined,
         game: keyof typeof EGameId = "csgo",
     ): Promise<IGetItemsList> {
         return this.get(
