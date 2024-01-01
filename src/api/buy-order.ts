@@ -1,6 +1,6 @@
 import { stringify } from "querystring";
 import { RequestUtils } from "../utils/request";
-import { EGameId, IBuyOrderHistory, IBuyOrders, ICreateBuyOrder, IEditBuyOrder, IRemoveAllOrders, IRemoveBuyOrder } from "../types/waxpeer";
+import { EGameId, IBuyOrderHistory, IBuyOrders, ICreateBuyOrder, IEditBuyOrder, IRemoveAllOrders, IRemoveBuyOrder } from "./types";
 
 export class BuyOrderDomain {
     private requestUtils: RequestUtils;

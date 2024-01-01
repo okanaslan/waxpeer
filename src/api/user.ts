@@ -1,5 +1,5 @@
 import { stringify } from "querystring";
-import { ICheckTradeLink, IMyHistory, ISetMyKeys, IUser } from "../types/waxpeer";
+import { ICheckTradeLink, IMyHistory, ISetMyKeys, IUser } from "./types";
 import { RequestUtils } from "../utils/request";
 
 export class UserDomain {

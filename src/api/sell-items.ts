@@ -12,7 +12,7 @@ import {
     IResponseEdit,
     ListItems,
     ListedItem,
-} from "../types/waxpeer";
+} from "./types";
 
 export class SellItemsDomain {
     private requestUtils: RequestUtils;

@@ -1,4 +1,5 @@
-export { Waxpeer } from "./waxpeer";
-export { TradeWebsocket } from "./Sockets/tradeSocket";
-export { WebsiteWebsocket } from "./Sockets/websiteSocket";
-export { EGameId } from "./types/waxpeer";
+export { WaxpeerAPI } from "./api";
+export { TradeWebsocket } from "./ws/trade";
+export { WebsiteWebsocket } from "./ws/website";
+export * from "./api/types";
+export * from "./ws/types";

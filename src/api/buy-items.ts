@@ -13,7 +13,7 @@ import {
     IPrices,
     IPricesDopplers,
     TradesStatus,
-} from "../types/waxpeer";
+} from "./types";
 import { RequestUtils } from "../utils/request";
 
 export class BuyItemsDomain {

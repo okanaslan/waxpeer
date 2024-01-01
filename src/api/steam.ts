@@ -1,7 +1,7 @@
 import { stringify } from "querystring";
 
 import { RequestUtils } from "../utils/request";
-import { EGameId, EMinExteriors, EWeaponBrand, IGetItemsList, IGetSteamItems } from "../types/waxpeer";
+import { EGameId, EMinExteriors, EWeaponBrand, IGetItemsList, IGetSteamItems } from "./types";
 
 export class SteamDomain {
     private requestUtils: RequestUtils;

@@ -1,4 +1,4 @@
-import { EGameId } from "./waxpeer";
+import { EGameId } from "../api/types";
 
 export interface TradeWebsocketCreateTrade {
     name: "send-trade";
@@ -55,12 +55,6 @@ export interface TradeWebsocketAcceptWithdraw {
 export interface TradeWebsocketAcceptWithdrawData {
     tradeid: string; //5525585555
     partner: string; //76561199059254XXX
-}
-
-export enum WebsiteSocketSubEvents {
-    add_item = "add_item",
-    remove = "remove",
-    update_item = "update_item",
 }
 
 export enum WebsiteSocketEvents {

@@ -8,7 +8,7 @@ import {
     IMerchantListItem,
     IMerchantListItemsSteam,
     IMerchantUser,
-} from "../types/waxpeer";
+} from "./types";
 
 export class MerchantDepositDomain {
     private requestUtils: RequestUtils;
