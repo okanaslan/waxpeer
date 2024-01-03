@@ -1,32 +1,30 @@
 {
-    "name": "waxpeer",
-    "version": "2.0.0",
+    "name": "waxpeer-ts",
+    "version": "1.0.0",
     "description": "Waxpeer API wrapper for NodeJs",
-    "main": "src/index.ts",
+    "main": "dist/index.js",
     "scripts": {
-        "dev": "tsc-watch --onSuccess \"node ./dist/test.js\"",
         "build": "tsc -p ./tsconfig.json",
-        "push": "tsc && npm publish --access public"
+        "push": "npm publish --access public"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/skylight-ity/waxpeer.git"
+        "url": "git+https://github.com/okanaslan/waxpeer.git"
     },
     "license": "ISC",
     "devDependencies": {
+        "@types/socket.io-client": "^3.0.0",
         "@types/ws": "^8.5.10",
         "prettier": "^3.1.1",
         "ts-node": "^10.9.2",
-        "tsc": "^2.0.4",
-        "typescript": "^5.3.3",
-        "tsc-watch": "^6.0.4"
+        "typescript": "^5.3.3"
     },
     "dependencies": {
         "@types/node": "^20.10.6",
         "axios": "^1.6.3",
         "dotenv": "^16.3.1",
         "limiter": "^2.1.0",
-        "socket.io-client": "^4.7.2",
+        "socket.io-client": "^2.5.0",
         "ws": "^8.16.0"
     }
 }

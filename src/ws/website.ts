@@ -40,31 +40,31 @@ export class WebsiteWebsocket extends EventEmitter {
             console.log("WebsiteWebsocket disconnected");
         });
 
-        socket.on("handshake", (data) => {
+        socket.on("handshake", (data: any) => {
             this.emit("handshake", data);
         });
 
-        socket.on("add_item", (data) => {
+        socket.on("add_item", (data: any) => {
             this.emit("add_item", data);
         });
 
-        socket.on("update_item", (data) => {
+        socket.on("update_item", (data: any) => {
             this.emit("update_item", data);
         });
 
-        socket.on("updated_item", (data) => {
+        socket.on("updated_item", (data: any) => {
             this.emit("updated_item", data);
         });
 
-        socket.on("remove", (data) => {
+        socket.on("remove", (data: any) => {
             this.emit("remove_item", data);
         });
 
-        socket.on("change_user", (data) => {
+        socket.on("change_user", (data: any) => {
             this.emit("change_user", data);
         });
 
-        socket.on("connect_error", (error) => {
+        socket.on("connect_error", (error: any) => {
             this.socketOpen = false;
             console.error("connect_error", error);
         });
